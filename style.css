@@ -1,0 +1,28 @@
+body{
+    font-family: 'Kanit', sans-serif;
+}
+
+header{
+    background: #FFFFFF;
+    padding: 20px;
+    height: 60px;
+}
+
+.encabezado{
+    width: auto;
+    position: relative;
+    margin: 0 auto;
+    display: inline;
+}
+
+.encabezado h2{
+    font-size: 48px;
+    color: #0A3871;
+    font-weight: bold;
+    text-align: center;
+}
+
+.logo{
+    float: left;
+    margin: 0 20px 0 0;
+}
