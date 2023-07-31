@@ -24,5 +24,43 @@ header{
 
 .logo{
     float: left;
-    margin: 0 20px 0 0;
+    margin: 0 1em;
+}
+
+/*CSS para main*/
+
+.botones{
+    background: #0A3871;
+    padding: 1em 30%;
+    text-align: center;
+}
+
+.botones img{
+    padding: 0 0 0 1em;
+}
+
+.botones h2{
+    color: #FFFFFF;
+    padding: 0 0 1em 0;
+    text-align: left;
+}
+
+.boton{
+    width: 40%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0A3871;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 20px;
+    margin: 0 1em;
+    cursor: pointer;
+    transition: 350ms all;
+}
+
+.boton:hover{
+    background: #609ED4;
+    color: #FFFFFF;
+    transform: scale(1.05);
 }
