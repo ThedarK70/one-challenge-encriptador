@@ -26,8 +26,27 @@ header{
     float: left;
     margin: 0 1em;
 }
+/*CSS para cajas de texto*/
 
-/*CSS para main*/
+.principal{
+    background: #0A3871;
+    text-align: center;
+    padding: 4em 0 2em 0;
+}
+
+textarea{
+    vertical-align: top;
+    text-align: justify;
+    font-size: 2em;
+    margin: 0 2em;
+    border: none;
+    border-radius: 25px;
+    width: 40%;
+    height: 600px;
+    resize: none;
+}
+
+/*CSS para Botones*/
 
 .botones{
     background: #0A3871;
