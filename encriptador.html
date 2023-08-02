@@ -33,10 +33,13 @@
                         <p><b>Ningún mensaje fué encontrado</b></p>
                         <p>Ingresa el texto que desees encriptar o desencriptar</p>
                     </div>
-                    <textarea readonly name="textoSalida" id="textoSalida"></textarea>
+                    <div id="resultado">
+                        <textarea readonly name="textoSalida"></textarea>
+                        <input type="button" value="Copiar" class="boton">
+                    </div>
                 </div>
                 <script>
-                    document.getElementById("textoSalida").style.display = "none";
+                    document.getElementById("resultado").style.display = "none";
                 </script>
             </section>
             <!-- Sección que almacena los botones -->

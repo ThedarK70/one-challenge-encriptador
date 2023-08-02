@@ -55,13 +55,13 @@ main{
 textarea{
     font-size: 2em;
     text-align: justify;
-    margin: 5% 5%;
+    margin: 25px calc(5% - 15px) 25px 5%;
     padding: 0 15px 0 0;
     border: none;
     background-color: transparent;
     resize: none;
     width: 90%;
-    height: 90%;
+    height: calc(100% - 50px);
 }
 
 textarea:focus{
@@ -84,6 +84,15 @@ textarea::-webkit-scrollbar-thumb{
     outline: none;
     border: none;
     border-radius: 3px;
+}
+
+#resultado{
+    width: 100%;
+    margin: 0;
+    height: 100%;
+}
+#resultado textarea{
+    height: calc(90% - 70px);
 }
 
 #sinTexto{
@@ -130,7 +139,7 @@ textarea::-webkit-scrollbar-thumb{
     font-weight: bold;
     color: #0A3871;
     background: #FFFFFF;
-    border: none;
+    border: 3px solid #0A3871;
     border-radius: 20px;
     margin: 0 1em;
     cursor: pointer;
