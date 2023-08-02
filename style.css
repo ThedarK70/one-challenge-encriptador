@@ -47,6 +47,7 @@ main{
     margin:  0 5%;
     border-radius: 25px;
     display: inline-block;
+    vertical-align: top;
     width: 35%;
     height: 100%;
 }
@@ -83,6 +84,24 @@ textarea::-webkit-scrollbar-thumb{
     outline: none;
     border: none;
     border-radius: 3px;
+}
+
+#sinTexto{
+    text-align: center;
+    color: #0A3871;
+    width: fit-content;
+    box-sizing: border-box;
+    padding: 10%;
+}
+
+#sinTexto p{
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+#sinTexto p b{
+    font-size: 32px;
+    font-weight: bold;
 }
 
 /*CSS para Botones*/

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
@@ -13,29 +12,34 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     </head>
-
     <body>
-
         <header>
             <div class="encabezado">
                 <h1><img class="logo" src="img/logo-alura.png" alt="Logo de Alura"></h1>
                 <h2>Encriptador y Desencriptador de Texto</h2>
             </div>
         </header>
-
         <main>
-            <!-- Seccion que almacena las cajas de texto -->
+            <!-- Sección que almacena las cajas de texto -->
             <section class="principal">
+                <!-- Caja de texto de entrada -->
                 <div>
                     <textarea placeholder="Ingrese el Texto aquí" name="textoEntrada"></textarea>
                 </div>
-
+                <!-- Caja de texto procesado -->
                 <div>
-
-                    <textarea readonly name="textoSalida"></textarea>
+                    <div id="sinTexto">
+                        <img src="img/Muñeco.png">
+                        <p><b>Ningún mensaje fué encontrado</b></p>
+                        <p>Ingresa el texto que desees encriptar o desencriptar</p>
+                    </div>
+                    <textarea readonly name="textoSalida" id="textoSalida"></textarea>
                 </div>
+                <script>
+                    document.getElementById("textoSalida").style.display = "none";
+                </script>
             </section>
-            <!-- Seccion que almacena los botones -->
+            <!-- Sección que almacena los botones -->
             <section class="botones">
                 <div>
                     <h1><img class="logo" src="img/exclamacion.ico" alt="Icono de excamación"></h1>
@@ -46,8 +50,6 @@
                     <input type="button" value="Desencriptar" class="boton">
                 </div>
             </section>
-
         </main>
     </body>
-
 </html>
