@@ -24,7 +24,7 @@
             <section class="principal">
                 <!-- Caja de texto de entrada -->
                 <div>
-                    <textarea placeholder="Ingrese el Texto aquí" name="textoEntrada"></textarea>
+                    <textarea placeholder="Ingrese el Texto aquí" id="textoEntrada"></textarea>
                 </div>
                 <!-- Caja de texto procesado -->
                 <div>
@@ -34,13 +34,10 @@
                         <p>Ingresa el texto que desees encriptar o desencriptar</p>
                     </div>
                     <div id="resultado">
-                        <textarea readonly name="textoSalida"></textarea>
-                        <input type="button" value="Copiar" class="boton">
+                        <textarea readonly id="textoSalida"></textarea>
+                        <input type="button" value="Copiar" class="boton" id="copiar">
                     </div>
                 </div>
-                <script>
-                    document.getElementById("resultado").style.display = "none";
-                </script>
             </section>
             <!-- Sección que almacena los botones -->
             <section class="botones">
@@ -49,10 +46,64 @@
                     <h2>Solo Letras minúsculas y sin acentos!</h2>
                 </div>
                 <div>
-                    <input type="button" value="Encriptar" class="boton">
-                    <input type="button" value="Desencriptar" class="boton">
+                    <input type="button" value="Encriptar" class="boton" id="encriptar">
+                    <input type="button" value="Desencriptar" class="boton" id="desencriptar">
                 </div>
             </section>
         </main>
     </body>
+    <script>
+        var texto;
+
+        function verificaTexto(){
+
+            texto = document.getElementById("textoEntrada").value;
+            if(texto != '')
+            {
+                document.getElementById("sinTexto").style.display = "none";
+                document.getElementById("resultado").style.display = "initial";
+                return true;
+            }
+            else
+            {
+                document.getElementById("resultado").style.display = "none";
+                document.getElementById("sinTexto").style.display = "inline-block";
+                return false;
+            }
+        }
+
+        function encriptacion(){
+
+            if(verificaTexto())
+            {
+                document.getElementById("textoSalida").value = texto;
+            }
+            return;            
+        }
+
+        function desencriptacion(){
+
+            if(verificaTexto())
+            {
+                document.getElementById("textoSalida").value = texto;
+            }
+            return;
+        }
+
+        function copiarTexto(){
+            texto = document.getElementById("textoSalida").value;
+            navigator.clipboard.writeText(texto);
+            document.getElementById("copiar").value = "Texto copiado";
+            setTimeout(function(){
+            document.getElementById("copiar").value = "Copiar";
+            }, 2000);
+        }
+
+        var botonEncriptar = document.getElementById("encriptar");
+        var botonDesencriptar = document.getElementById("desencriptar");
+        var botonCopiar = document.getElementById("copiar");
+        botonEncriptar.onclick = encriptacion;
+        botonDesencriptar.onclick = desencriptacion;
+        botonCopiar.onclick = copiarTexto;
+    </script>
 </html>
