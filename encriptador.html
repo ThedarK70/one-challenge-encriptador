@@ -15,19 +15,19 @@
     <body>
         <header>
             <div class="encabezado">
-                <h1><img class="logo" src="img/logo-alura.png" alt="Logo de Alura"></h1>
+                <img class="logo" src="img/logo-alura.png" alt="Logo de Alura">
                 <h2>Encriptador y Desencriptador de Texto</h2>
             </div>
         </header>
         <main>
             <!-- Sección que almacena las cajas de texto -->
-            <section class="principal">
+            <section class="principal" id="principal">
                 <!-- Caja de texto de entrada -->
-                <div>
+                <div id="cajaEntrada">
                     <textarea placeholder="Ingrese el Texto aquí" id="textoEntrada"></textarea>
                 </div>
                 <!-- Caja de texto procesado -->
-                <div>
+                <div id="cajaResultado">
                     <div id="sinTexto">
                         <img src="img/Muñeco.png">
                         <p><b>Ningún mensaje fué encontrado</b></p>
@@ -53,13 +53,40 @@
         </main>
     </body>
     <script>
-        var texto;
+        var texto = '';
+        var cajaR = document.getElementById("cajaResultado");
+        var cajaE = document.getElementById("cajaEntrada");
+
+        window.onresize = resize;
+
+        function resize()
+        {
+            if((cajaR.style.display != "none")&&(screen.width>=775)&&(document.getElementById("textoSalida").value != ''))
+            {
+                cajaR.style.display = "inline-block";
+                document.getElementById("principal").style.height = "65%"
+                cajaR.style.height = "90%";
+                cajaE.style.height = "90%";
+            }
+        }
 
         function verificaTexto(){
 
             texto = document.getElementById("textoEntrada").value;
             if(texto != '')
             {
+                if(screen.width <= 775)
+                {
+                    document.getElementById("principal").style.height = "100vh"
+                    cajaR.style.display = "block";
+                    cajaR.style.height = "45%";
+                    cajaE.style.height = "45%";
+                }
+                else
+                {
+                    document.getElementById("principal").style.height = "65%"
+                    cajaR.style.display = "inline-block";
+                }
                 document.getElementById("sinTexto").style.display = "none";
                 document.getElementById("resultado").style.display = "inherit";
                 return true;

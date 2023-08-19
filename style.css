@@ -2,12 +2,14 @@ html, body{
     font-family: 'Kanit', sans-serif;
     height: 100%;
     background: #0A3871;
+    width: 100%;
 }
 
 header{
     background: #FFFFFF;
-    padding: 20px;
+    padding: 20px 5%;
     height: 5%;
+    width: 90%;
 }
 
 main{
@@ -16,13 +18,14 @@ main{
 
 .encabezado{
     width: auto;
+    height: 100%;
     position: relative;
     margin: 0 auto;
     display: inline;
 }
 
 .encabezado h2{
-    font-size: 48px;
+    font-size: 3em;
     color: #0A3871;
     font-weight: bold;
     text-align: center;
@@ -44,16 +47,16 @@ main{
 
 .principal div{
     background: #FFFFFF;
-    margin:  0 5%;
+    margin:  0 7.5%;
     border-radius: 25px;
     display: inline-block;
     vertical-align: top;
-    width: 35%;
+    width: calc(35% - 2px);
     height: 100%;
 }
 
 textarea{
-    font-size: 2em;
+    font-size: 3.5vh;
     text-align: justify;
     margin: 25px calc(5% - 15px) 25px 5%;
     padding: 0 15px 0 0;
@@ -99,9 +102,15 @@ textarea::-webkit-scrollbar-thumb{
 #sinTexto{
     text-align: center;
     color: #0A3871;
-    width: fit-content;
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
+    margin: 0;
     padding: 10%;
+}
+
+#sinTexto img{
+    width: 80%;
 }
 
 #sinTexto p{
@@ -118,7 +127,7 @@ textarea::-webkit-scrollbar-thumb{
 
 .botones{
     background: #0A3871;
-    padding: 1% 30%;
+    padding: 1% 15%;
     text-align: center;
     height: 10%;
 }
@@ -151,4 +160,73 @@ textarea::-webkit-scrollbar-thumb{
     background: #609ED4;
     color: #FFFFFF;
     transform: scale(1.05);
+}
+
+@media screen and (max-width:775px){
+
+    header{
+        height: 5%;
+        padding: 4% 5%;
+    }
+
+    .encabezado h2{
+        font-size: 5vw;
+    }
+
+    .encabezado img{
+        height: 100%;
+    }
+
+    .principal{
+        height: 75%;
+    }
+
+    .principal div{
+        width: 85%;
+        display: block;
+        height: 90%;
+        margin: 5% 7.5%;
+    }
+
+    #cajaResultado{
+        display: none;
+    }
+
+    
+    #sinTexto{
+        display: inline-block;
+    }
+    
+    #sinTexto img{
+        height: 100%;
+        width: auto;
+    }
+
+    #sinTexto p{
+        font-size: 7px;
+        margin: 0px 0;
+    }
+    
+    #sinTexto p b{
+        font-size: 3px;
+        font-weight: bold;
+    }
+
+    .botones{
+        padding: 1% 5%;
+        width: 90%;
+        height: 15%;
+    }
+
+    .boton{
+        width: 38%;
+    }
+}
+
+@media screen and (min-width:775px) {
+    
+    .encabezado h2{
+        font-size: 2.25em;
+    }
+
 }
